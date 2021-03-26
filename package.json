@@ -1,0 +1,27 @@
+{
+  "name": "sahara",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snmsaj/sahara.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/snmsaj/sahara/issues"
+  },
+  "homepage": "https://github.com/snmsaj/sahara#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "mustache-express": "^1.3.0",
+    "pg": "^8.5.1",
+    "sequelize": "^6.6.2"
+  }
+}
