@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const mustacheExpress = require('mustache-express')
+const models = require('./models')
 const path = require('path')
 const session = require('express-session');
 
