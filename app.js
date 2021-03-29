@@ -20,6 +20,7 @@ app.use(session({
     saveUninitialized: true
 }))
 
+
 const indexRouter = require('./routes/index.js')
 app.use('/', indexRouter)
 
