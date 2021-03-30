@@ -13,8 +13,9 @@ app.engine('mustache',mustacheExpress(VIEWS_PATH + '/partials','.mustache'))
 app.set('views',VIEWS_PATH)
 app.set('view engine','mustache')
 app.use(express.urlencoded());
-app.use(express.static('css'));
-app.use(express.static('js'));
+app.use(express.static(__dirname + '/css'));
+app.use(express.static(__dirname + '/js'));
+app.use(express.static(__dirname + '/assets'));
 app.use(session({
     secret: 'secretkey',
     resave: false,
