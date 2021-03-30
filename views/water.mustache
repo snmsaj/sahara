@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{> header}}
+    <title>Water</title>
+</head>
+
+<body>
+    {{> menu}}
+
+    <section class="section">
+        <div class="container">
+
+
+            <div class="columns mt-5 is-8 is-variable is-multiline">
+                {{#water}}
+                <div class="column is-4-tablet is-3-desktop ">
+                    <a href="#" class="has-text-grey">
+                        <div class="card">
+                            <div class="card-image has-text-centered px-6">
+                                <img src="{{image}}" alt="water">
+                            </div>
+                            <div class="card-content">
+                                <p class="title is-size-5 has-text-centered">{{name}}</p>
+                                <p class="has-text-centered">${{price}}</p>
+                            </div>
+                    </a>
+                </div>
+            </div>
+            {{/water}}
+        </div>
+
+        </div>
+    </section>
+
+    {{> footer}}
+</body>
+
+</html>
