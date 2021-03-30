@@ -4,9 +4,20 @@
   font-size: 1.5em;
   font-weight: bold;
 }
+
+.site{
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.site-content{
+  flex: 1;
+}
+
 // Hero section
 .hero {
-  background-image: url("hero.jpg");
+  background-image: url("/assets/hero.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -69,4 +80,17 @@
 //footer
 .footer {
   padding: 2rem 1.5rem 2rem;
+}
+
+.card-images{
+  height: 150px;
+}
+
+.bm--card-equal-height {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.bm--card-equal-height .card-footer {
+  margin-top: auto;
 }
