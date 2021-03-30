@@ -1,3 +1,9 @@
+.logo {
+  font-family: "Great Vibes", cursive;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
 .hero {
   background-image: url("hero.jpg");
   background-position: center;
@@ -57,5 +63,9 @@
   .hero .container h2 {
     font-size: 1.4em;
   }
+}
+
+.footer {
+  padding: 2rem 1.5rem 2rem;
 }
 /*# sourceMappingURL=main.css.map */
