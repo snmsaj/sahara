@@ -3,7 +3,10 @@ const app = express()
 const mustacheExpress = require('mustache-express')
 const models = require('./models')
 const path = require('path')
+const bcrypt = require('bcrypt')
 const session = require('express-session');
+
+
 
 const PORT = 3000
 const VIEWS_PATH = path.join(__dirname,'/views')
