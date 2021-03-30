@@ -6,33 +6,35 @@
     <title>Water</title>
 </head>
 
-<body>
+<body class="site">
     {{> menu}}
 
-    <section class="section">
-        <div class="container">
-
-
-            <div class="columns mt-5 is-8 is-variable is-multiline">
-                {{#water}}
-                <div class="column is-4-tablet is-3-desktop ">
-                    <a href="#" class="has-text-grey">
-                        <div class="card">
-                            <div class="card-image has-text-centered px-6">
-                                <img src="{{image}}" alt="water">
+    <main class="site-content">
+        <section class="section">
+            <div class="container">
+                <div class="columns mt-5 is-8 is-variable is-multiline">
+                    {{#water}}
+                    <div class="column is-4-tablet is-3-desktop">
+                        <a href="#" class="has-text-grey">
+                            <div class="card bm--card-equal-height">
+                                <div class="card-image has-text-centered px-6">
+                                    <img src="{{image}}" alt="water" class="card-images">
+                                </div>
+                                <div class="card-content">
+                                    <p class="title is-size-5 has-text-centered">{{name}}</p>
+                                    <p class="has-text-centered">${{price}}</p>
+                                </div>
+                                <footer class="card-footer">
+                                    <p class="card-footer-item has-text-grey">View</p>
+                                </footer>
                             </div>
-                            <div class="card-content">
-                                <p class="title is-size-5 has-text-centered">{{name}}</p>
-                                <p class="has-text-centered">${{price}}</p>
-                            </div>
-                    </a>
+                        </a>
+                    </div>
+                    {{/water}}
                 </div>
             </div>
-            {{/water}}
-        </div>
-
-        </div>
-    </section>
+        </section>
+    </main>
 
     {{> footer}}
 </body>
