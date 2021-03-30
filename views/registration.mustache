@@ -1,11 +1,13 @@
-<html>
+<!DOCTYPE html>
+<html lang="em">
+  <head>
+    {{> header}}
+  </head>
 
-<head></head>
-
-<body>
-
-<form method="POST" action="/login/register">
-    <!-- <div class="field">
+  <body>
+    {{> menu}}
+    <form method="POST" action="/login/register">
+      <!-- <div class="field">
     <div class="control is-medium is-loading">
         <input class="input is-medium" name= "username" type="text" placeholder="Username">
     </div>
@@ -16,13 +18,11 @@
         <button>Register</button>
     </div>
      -->
-    
-    <input type="text" placeholder="username" name="username">
-    <input type="password" placeholder="password" name="password">
-    <button>Register</button>
 
-</form>
-
-</body>
-
+      <input type="text" placeholder="username" name="username" />
+      <input type="password" placeholder="password" name="password" />
+      <button>Register</button>
+    </form>
+    {{> footer}}
+  </body>
 </html>
