@@ -6,10 +6,28 @@
     <title>Document</title>
 </head>
 
-<body>
+<body class="site">
     {{> menu}}
 
+    <main class="site-content">
+        <section class="section">
+            <div class="container">
+                <div class="columns is-vcentered is-multiline">
 
+                    <div class="column is-6-tablet is-5-desktop has-text-centered">
+                        <img src="{{image}}" alt="item" class="px-6">
+                    </div>
+                    <div class="column is-12-tablet is-4-desktop">
+                        <div class="column is-6-tablet is-3-desktop">
+                            <h1 class="is-size-3-mobile is-size-1-desktop title">{{name}}</h1>
+                            <h2 class="is-size-3-mobile is-size-2-desktop subtitle">${{price}}</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
     {{> footer}}
 </body>
 
