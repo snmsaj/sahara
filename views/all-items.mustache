@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{> header}}
+    <title>Water</title>
+</head>
+
+<body class="site">
+    {{> menu}}
+
+    <main class="site-content">
+        <section class="section">
+            <div class="container">
+                <div class="columns mt-5 is-8 is-variable is-multiline">
+                    {{#items}}
+                    <div class="column is-4-tablet is-3-desktop">
+                        <a href="/products/{{category}}/{{id}}" class="has-text-grey">
+                            <div class="card bm--card-equal-height">
+                                <div class="card-image has-text-centered px-6">
+                                    <img src="{{image}}" alt="item" class="card-images">
+                                </div>
+                                <div class="card-content">
+                                    <p class="title is-size-5 has-text-centered">{{name}}</p>
+                                    <p class="has-text-centered">${{price}}</p>
+                                </div>
+                                <footer class="card-footer">
+                                    <p class="card-footer-item has-text-grey">View</p>
+                                </footer>
+                            </div>
+                        </a>
+                    </div>
+                    {{/items}}
+                </div>
+            </div>
+        </section>
+    </main>
+
+    {{> footer}}
+</body>
+
+</html>
