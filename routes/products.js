@@ -33,7 +33,16 @@ router.get("/", (req, res) => {
 });
 
 //Goes to page that shows the item you click on
+router.get("/:category/:name", (req, res) => {
+    const productName = req.params.name
 
-
+    models.Product.findOne({
+        where:{
+            name:productName
+        }
+    }).then ((product) => {
+        res.render('item', {product:product})
+    })
+})
 
 module.exports = router;
