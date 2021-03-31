@@ -18,8 +18,8 @@ app.use(express.static(__dirname + '/js'));
 app.use(express.static(__dirname + '/assets'));
 app.use(session({
     secret: 'secretkey',
-    resave: false,
-    saveUninitialized: true
+    resave: true,
+    saveUninitialized: false
 }))
 
 
