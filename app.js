@@ -41,6 +41,10 @@ app.use('/products', productsRouter)
 const cartRouter = require('./routes/cart.js')
 app.use('/products', cartRouter)
 
+const addressRouter = require('./routes/account.js')
+app.use('/address', addressRouter)
+
+
 
 
 app.listen(PORT,() => console.log('Server is running...'))
