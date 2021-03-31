@@ -13,7 +13,7 @@
         <section class="section">
             <div class="container">
                 <div class="columns is-vcentered is-multiline">
-
+                    {{#product}}
                     <div class="column is-6-tablet is-5-desktop has-text-centered">
                         <img src="{{image}}" alt="item" class="px-6">
                     </div>
@@ -23,6 +23,7 @@
                             <h2 class="is-size-3-mobile is-size-2-desktop subtitle">${{price}}</h2>
                         </div>
                     </div>
+                    {{/product}}
                 </div>
             </div>
         </section>
