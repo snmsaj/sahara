@@ -12,7 +12,7 @@ router.post('/', async(req, res) => {
     
     let user = await models.User.findOne({
         where: {
-            username
+            username : username
         }
     })
 
@@ -25,6 +25,7 @@ router.post('/', async(req, res) => {
             if(req.session) {
                 req.session.user = {userId: user.id}
                 res.redirect('/account/products')
+                
             }
         }else{
             res.render('login', {message: "Incorrect login credentials. Please try again"});
