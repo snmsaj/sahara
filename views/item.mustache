@@ -10,25 +10,27 @@
 
     <main class="site-content">
       <section class="section">
-        <div class="container">
+        <div>
           <div>
             {{#product}}
             <div>
               <img
                 src="{{ image }}"
                 alt="item"
-                class="card-images"
+                class="item-images"
                 ALIGN="left"
                 HSPACE="50"
               />
             </div>
             <div>
-              <div>
+              <div class="card-images">
                 <h1>{{ name }}</h1>
                 <h2>${{ price }}</h2>
                 <form method="POST" action="#">
                   <input type="hidden" value="{{ id }}" name="productId" />
-                  <button class="button is-info is-rounded">Add to Cart</button>
+                  <button class="button is-info is-rounded has-text-centered">
+                    Add to Cart
+                  </button>
                 </form>
               </div>
             </div>

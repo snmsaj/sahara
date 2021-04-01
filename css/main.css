@@ -11,8 +11,8 @@
   min-height: 100vh;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .content {
@@ -22,8 +22,16 @@
 
 .site-content {
   -webkit-box-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.item-images {
+  height: 80vh;
+  width: 80vh;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .hero {
@@ -37,7 +45,7 @@
 .hero .container {
   color: white;
   -ms-flex-line-pack: center;
-  align-content: center;
+      align-content: center;
 }
 
 .hero .container h1 {
@@ -83,9 +91,14 @@
 @media only screen and (max-width: 540px) {
   .hero .container h1 {
     font-size: 5em;
+    float: right;
   }
   .hero .container h2 {
     font-size: 1.4em;
+    float: right;
+  }
+  .hero .container .button--is-info--is-rounded--has-text-centered {
+    float: right;
   }
 }
 
@@ -104,8 +117,8 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   height: 100%;
 }
 
