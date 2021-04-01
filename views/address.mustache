@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{> header}}
+    <title>Water</title>
+  </head>
+
+  <body class="site">
+    {{> menu}}
+
+    <main class="site-content">
+      <section class="section">
+        <div class="container">
+
+            {{#addresses}}
+            <p>{{address}}</p>
+            <p>{{city}}</p>
+            <p>{{state}}</p>
+            <p>{{postcode}}</p>
+            {{/addresses}}
+
+            <a href="/account/add-address"><button>Add Address</button></a>
+          
+        </div>
+      </section>
+    </main>
+
+    {{> footer}}
+  </body>
+</html>

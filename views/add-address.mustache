@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="em">
+  <head>
+    {{> header}}
+  </head>
+
+  <body>
+    {{> menu}}
+    <form method="POST" action="/account/add-address">
+      <div class="field">
+    <div class="control is-medium is-loading">
+        <input class="input is-info" type="text" placeholder="Street" name= "address" >
+    </div>
+
+    <div class="field">
+    <div class="control is-medium is-loading">
+        <input class="input is-info" type="text" placeholder="City" name="city" >
+
+    <div class="field">
+    <div class="control is-medium is-loading">
+        <input class="input is-info" type="text" placeholder="State" name="state" >
+
+    <div class="field">
+    <div class="control is-medium is-loading">
+        <input class="input is-info" type="text" placeholder="Postcode" name="postcode" >
+        <button>Submit</button>
+    </div>
+    
+
+      <!-- <input type="text" placeholder="username" name="username" />
+      <input type="password" placeholder="password" name="password" />
+      <button>Register</button> -->
+    </form>
+    {{> footer}}
+  </body>
+</html>

@@ -10,11 +10,13 @@ router.post('/', async(req, res) => {
     let username = req.body.username
     let password = req.body.password
     
+    
     let user = await models.User.findOne({
         where: {
             username : username
         }
-    })
+    }) 
+   
 
     if(user != null) {
 
@@ -24,8 +26,9 @@ router.post('/', async(req, res) => {
             //create session 
             if(req.session) {
                 req.session.user = {userId: user.id}
-                res.redirect('/account/products')
-                
+                res.redirect('/products')
+                console.log(req.session.user.userId)
+
             }
         }else{
             res.render('login', {message: "Incorrect login credentials. Please try again"});
@@ -70,7 +73,7 @@ router.post('/register', async (req,res) => {
 
                 let savedUser = await user.save()
                 if(savedUser != null) {
-                    res.redirect('/login')
+                    res.redirect('/your-account')
                 } else {
                     res.render('/register', {message: "User already exists!"})
                 }

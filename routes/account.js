@@ -10,20 +10,32 @@ router.post('/add-address', async (req,res) => {
         city: req.body.city,
         state: req.body.state,
         postcode: req.body.postcode,
-        userId: req.body.id //req.session.user.userId,
+        userId: req.session.user.userId,
     }
+        console.log(body)
 
     let persistedAddress = await models.Address.create(body)
 
     if(persistedAddress != null) {
-        res.redirect('/user/products')
+        res.redirect('/products')
     } else {
-        res.render('user/add-address', {message: "Unable to add address "})
+        res.render('add-address', {message: "Unable to add address "})
     }
 })
 
-
+router.get('/add-address', (req,res) => {
+    res.render('add-address')
+})
  
+router.get('/address', async (req,res) => {
 
+    const userAddress = await models.Address.findAll({
+        where: {
+            userId: req.session.user.userId
+        }
+    })
+
+    res.render('address', {addresses: userAddress})
+})
 
 module.exports = router;
