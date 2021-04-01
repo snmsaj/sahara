@@ -1,39 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     {{> header}}
     <title>Document</title>
-</head>
+  </head>
 
-<body class="site">
+  <body class="site">
     {{> menu}}
 
     <main class="site-content">
-        <section class="section">
-            <div class="container">
-                <div>
-                    {{#product}}
-                    <div>
-                        <img src="{{image}}" alt="item">
-                    </div>
-                    <div>
-                        <div>
-                            <h1>{{name}}</h1>
-                            <h2>${{price}}</h2>
-                            <form method="POST" action="#">
-                                <input type="hidden" value="{{id}}" name="productId">
-                                <button>Add to Cart</button>
-                            </form>
-                        </div>
-                    </div>
-                    {{/product}}
-                </div>
+      <section class="section">
+        <div class="container">
+          <div>
+            {{#product}}
+            <div>
+              <img
+                src="{{ image }}"
+                alt="item"
+                class="card-images"
+                ALIGN="left"
+                HSPACE="50"
+              />
             </div>
-        </section>
+            <div>
+              <div>
+                <h1>{{ name }}</h1>
+                <h2>${{ price }}</h2>
+                <form method="POST" action="#">
+                  <input type="hidden" value="{{ id }}" name="productId" />
+                  <button class="button is-info is-rounded">Add to Cart</button>
+                </form>
+              </div>
+            </div>
+            {{/product}}
+          </div>
+        </div>
+      </section>
     </main>
-    
-    {{> footer}}
-</body>
 
+    {{> footer}}
+  </body>
 </html>
