@@ -39,7 +39,7 @@ const productsRouter = require('./routes/products.js')
 app.use('/products', productsRouter)
 
 const cartRouter = require('./routes/cart.js')
-app.use('/products', cartRouter)
+app.use('/cart', cartRouter)
 
 const addressRouter = require('./routes/account.js')
 app.use('/address', addressRouter)
