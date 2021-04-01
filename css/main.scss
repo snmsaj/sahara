@@ -18,6 +18,12 @@
   flex: 1;
 }
 
+.item-images {
+  height: 80vh;
+  width: 80vh;
+  align-self: center;
+}
+
 // Hero section
 .hero {
   background-image: url("/assets/hero.jpg");
@@ -73,9 +79,14 @@
     @media only screen and (max-width: 540px) {
       h1 {
         font-size: 5em;
+        float: right;
       }
       h2 {
         font-size: 1.4em;
+        float: right;
+      }
+      .button--is-info--is-rounded--has-text-centered {
+        float: right;
       }
     }
   }
