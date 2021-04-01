@@ -5,13 +5,16 @@
   font-weight: bold;
 }
 
-.site{
+.site {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
 }
-
-.site-content{
+.content {
+  max-width: 500px;
+  margin: auto;
+}
+.site-content {
   flex: 1;
 }
 
@@ -25,6 +28,7 @@
 
   .container {
     color: white;
+    align-content: center;
 
     h1 {
       font-size: 7em;
@@ -82,7 +86,7 @@
   padding: 2rem 1.5rem 2rem;
 }
 
-.card-images{
+.card-images {
   height: 150px;
   padding-top: 1em;
 }
