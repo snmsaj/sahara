@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const models = require("../models");
 
-router.post('/', (req, res) => {
-    const productId = parseInt(req.body.productId)
+router.get('/', (req, res) => {
+    const userId = parseInt(req.session.user.userId)
 
     
 })
