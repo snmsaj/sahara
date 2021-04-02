@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    {{> header}}
-    <title>Water</title>
-  </head>
 
-  <body class="site">
-    {{> menu}}
+<head>
+  {{> header}}
+  <title>Water</title>
+</head>
 
-    <main class="site-content">
-      <section class="section">
-        <div class="container">
+<body class="site">
+  {{> menu}}
 
-            {{#addresses}}
-            <p>{{address}}</p>
-            <p>{{city}}</p>
-            <p>{{state}}</p>
-            <p>{{postcode}}</p>
-            {{/addresses}}
+  <main class="site-content">
+    <div class="content">
+      <h3>Your saved addresses</h3>
+      <ol>
+        <li>{{#addresses}}
+          {{address}}
+          {{city}}
+          {{state}}
+          {{postcode}}
+          {{/addresses}}
+        </li>
+        <li>Cras gravida arcu at diam gravida gravida.</li>
+      </ol>
+    </div>
 
-            <a href="/account/add-address"><button>Add Address</button></a>
-          
-        </div>
-      </section>
-    </main>
+    <a href="/account/add-address"><button>Add Address</button></a>
+  </main>
 
-    {{> footer}}
-  </body>
+  {{> footer}}
+</body>
+
 </html>

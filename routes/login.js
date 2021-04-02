@@ -27,7 +27,6 @@ router.post('/', async(req, res) => {
             if(req.session) {
                 req.session.user = {userId: user.id}
                 res.redirect('/products')
-                console.log(req.session.user.userId)
 
             }
         }else{
