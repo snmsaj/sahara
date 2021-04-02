@@ -1,45 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     {{> header}}
     <title>Document</title>
-  </head>
+</head>
 
-  <body class="site">
+<body class="site">
     {{> menu}}
 
     <main class="site-content">
-      <section class="section">
-        <div>
-          <div>
-            {{#product}}
+        <section class="section">
             <div>
-              <img
-                src="{{ image }}"
-                alt="item"
-                class="item-images"
-                ALIGN="left"
-                HSPACE="50"
-              />
+                <div>
+                    {{#product}}
+                    <div>
+                        <img src="{{ image }}" alt="item" class="item-images" ALIGN="left" HSPACE="50" />
+                    </div>
+                    <div>
+                        <div class="card-images">
+                            <h1>{{ name }}</h1>
+                            <h2>${{ price }}</h2>
+                            <form method="POST" action="/products/cart">
+                                <div class="quantity" >
+                                    <input type="number" name="quantity">
+                                </div>
+                                <input type="hidden" value="{{ id }}" name="productId" />
+                                <button class="button is-info is-rounded has-text-centered">
+                                    Add to Cart
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    {{/product}}
+                </div>
+                <div>
+                {{#message}}
+                {{/message}}
             </div>
-            <div>
-              <div class="card-images">
-                <h1>{{ name }}</h1>
-                <h2>${{ price }}</h2>
-                <form method="POST" action="/cart">
-                  <input type="hidden" value="{{ id }}" name="productId" />
-                  <button class="button is-info is-rounded has-text-centered">
-                    Add to Cart
-                  </button>
-                </form>
-              </div>
             </div>
-            {{/product}}
-          </div>
-        </div>
-      </section>
+        </section>
     </main>
 
     {{> footer}}
-  </body>
+</body>
+
 </html>

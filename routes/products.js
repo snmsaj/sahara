@@ -45,4 +45,23 @@ router.get("/:category/:name", (req, res) => {
     })
 })
 
+//Add item to Carts table
+router.post('/cart',async (req, res) => {
+    const productId = parseInt(req.body.productId)
+    const userId = parseInt(req.session.user.userId)
+    const quantity = parseInt(req.body.quantity)
+
+    const cartItem = models.Cart.build({
+        productId: productId,
+        userId: userId,
+        quantity: quantity
+    })
+    console.log(cartItem)
+    await cartItem.save().then(savedItem => {
+        console.log("Item added to cart")
+    }).catch((error) => {
+        console.log(error)
+    })
+})
+
 module.exports = router;
