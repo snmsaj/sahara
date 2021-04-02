@@ -11,32 +11,52 @@
 
     <main class="site-content">
         <section class="section">
-            <div>
-                <div>
+            <div class="container">
+                <div class="columns is-vcentered is-multiline">
                     {{#product}}
-                    <div>
-                        <img src="{{ image }}" alt="item" class="item-images" ALIGN="left" HSPACE="50" />
+
+                    <div class="column is-7-desktop is-6-tablet has-text-centered">
+                        <img src="{{image}}" class="px-1" />
                     </div>
-                    <div>
-                        <div class="card-images">
-                            <h1>{{ name }}</h1>
-                            <h2>${{ price }}</h2>
-                            <form method="POST" action="/products/cart">
-                                <div class="quantity" >
-                                    <input type="number" name="quantity">
-                                </div>
-                                <input type="hidden" value="{{ id }}" name="productId" />
-                                <button class="button is-info is-rounded has-text-centered">
-                                    Add to Cart
-                                </button>
-                            </form>
-                        </div>
+
+                    <div class="column is-5-desktop is-6-tablet">
+                        <h1 class="is-size-3-desktop is-size-4-mobile title">{{name}}</h1>
+                        <h2 class="is-size-4-desktop is-size-5-mobile subtitle">${{price}}</h2>
+                        <form method="POST" action="/products/cart">
+                            <div class="quantity">
+                                <input type="number" name="quantity">
+                            </div>
+                            <input type="hidden" value="{{ id }}" name="productId" />
+                            <button class="button is-primary has-text-centered ml-6">Add to Cart
+                            </button>
+                        </form>
                     </div>
+
                     {{/product}}
                 </div>
-                <div>
-                {{#message}}
-                {{/message}}
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="columns">
+                    <div class="column">
+                        <div class="tabs is-boxed">
+                            <ul>
+                                <li class="is-active">
+                                    <a>Description</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="px-2" id="tab-content">
+
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum porro voluptatum sint non.
+                                Obcaecati doloremque nam fugit laborum dolor tenetur laboriosam autem, inventore, dolore
+                                eos tempora maxime corporis nemo! Facilis eveniet accusamus repellendus hic harum
+                                aliquid similique minima. Quas, tenetur.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             </div>
         </section>

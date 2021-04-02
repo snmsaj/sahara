@@ -26,14 +26,6 @@
           flex: 1;
 }
 
-.item-images {
-  height: 80vh;
-  width: 80vh;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-}
-
 .hero {
   background-image: url("/assets/hero.jpg");
   background-position: center;

@@ -6,7 +6,17 @@ const path = require('path')
 const bcrypt = require('bcrypt')
 const session = require('express-session');
 
-
+function authenticate(req, res, next) {
+    if(req.session) {
+        if(req.session.user) {
+            next()
+        }else {
+            res.redirect('/login')
+        }
+    }else {
+        res.redirect('/login')
+    }
+}
 
 const PORT = 3000
 const VIEWS_PATH = path.join(__dirname,'/views')
@@ -33,18 +43,13 @@ const loginRouter = require('./routes/login.js')
 app.use('/login', loginRouter)
 
 const accountRouter = require('./routes/account.js')
-app.use('/account', accountRouter)
+app.use('/account', authenticate, accountRouter)
 
 const productsRouter = require('./routes/products.js')
 app.use('/products', productsRouter)
 
 const cartRouter = require('./routes/cart.js')
-app.use('/cart', cartRouter)
-
-const addressRouter = require('./routes/account.js')
-app.use('/address', addressRouter)
-
-
+app.use('/cart', authenticate, cartRouter)
 
 
 
