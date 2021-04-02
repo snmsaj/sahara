@@ -18,7 +18,8 @@ function authenticate(req, res, next) {
     }
 }
 
-const PORT = 3000
+// const PORT = 3000
+const PORT = process.env.PORT || 8080
 const VIEWS_PATH = path.join(__dirname,'/views')
 
 
