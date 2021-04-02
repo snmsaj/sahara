@@ -8,22 +8,21 @@
   <body class="site">
     {{> menu}}
 
-    <main class="site-content">
-      <section class="section">
-        <div class="container">
-
-            {{#addresses}}
-            <p>{{address}}</p>
-            <p>{{city}}</p>
-            <p>{{state}}</p>
-            <p>{{postcode}}</p>
-            {{/addresses}}
-
-            <a href="/account/add-address"><button>Add Address</button></a>
-          
-        </div>
-      </section>
-    </main>
+    <div class="content">
+      <h3>Your saved addresses</h3>
+      <ol>
+        <li>{{#addresses}}
+          {{address}}
+          {{city}}
+          {{state}}
+          {{postcode}}
+          {{/addresses}}
+        </li>
+        <li>Cras gravida arcu at diam gravida gravida.</li>
+      </ol>
+    </div>
+    
+    <a href="/account/add-address"><button>Add Address</button></a>
 
     {{> footer}}
   </body>

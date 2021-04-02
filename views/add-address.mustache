@@ -1,36 +1,89 @@
-<!DOCTYPE html>
-<html lang="em">
-  <head>
-    {{> header}}
-  </head>
+<head>
+  {{> header}}
+</head>
 
-  <body>
-    {{> menu}}
-    <form method="POST" action="/account/add-address">
-      <div class="field">
-    <div class="control is-medium is-loading">
-        <input class="input is-info" type="text" placeholder="Street" name= "address" >
-    </div>
+<body class="site">
+  {{> menu}}
 
-    <div class="field">
-    <div class="control is-medium is-loading">
-        <input class="input is-info" type="text" placeholder="City" name="city" >
 
-    <div class="field">
-    <div class="control is-medium is-loading">
-        <input class="input is-info" type="text" placeholder="State" name="state" >
+  <main class="site-content">
+      <section class="hero is-primary is-fullheight">
+          <div class="hero-body">
+            <div class="container">
+              <div class="columns is-centered">
+                <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+                  <form action="/login" method="POST" class="box">
+                    <div class="field">
+                      <label for="" class="label">Enter your shipping address</label>
+                      <br>
+                      <label for="" class="label">First and last name</label>
+                      <div class="control has-icons-left">
+                        <input type="text" placeholder="e.g George Clooney" class="input"required>
+                        <span class="icon is-small is-left">
+                          <i class="fa fa-envelope"></i>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label for="" class="label">Street Address </label>
+                      <div class="control has-icons-left">
+                        <input type="text" placeholder="e.g 123 Rodeo Dr." class="input" name="address" required>
+                        <span class="icon is-small is-left">
+                          <i class="fa fa-lock"></i>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label for="" class="label">City</label>
+                      <div class="control has-icons-left">
+                        <input type="text" placeholder="e.g Beverly Hills" class="input" name="city" required>
+                        <span class="icon is-small is-left">
+                          <i class="fa fa-lock"></i>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label for="" class="label">State</label>
+                      <div class="control has-icons-left">
+                        <input type="text" placeholder="e.g CA" class="input" name="state" required>
+                        <span class="icon is-small is-left">
+                          <i class="fa fa-lock"></i>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label for="" class="label">Zip Code</label>
+                      <div class="control has-icons-left">
+                        <input type="text" placeholder="e.g 90210" class="input" name="postcode" required>
+                        <span class="icon is-small is-left">
+                          <i class="fa fa-lock"></i>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <button class="button is-success">
+                        Add Address
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-    <div class="field">
-    <div class="control is-medium is-loading">
-        <input class="input is-info" type="text" placeholder="Postcode" name="postcode" >
-        <button>Submit</button>
-    </div>
-    
-
-      <!-- <input type="text" placeholder="username" name="username" />
-      <input type="password" placeholder="password" name="password" />
-      <button>Register</button> -->
-    </form>
-    {{> footer}}
-  </body>
-</html>
+      {{#message}}
+          <article class="message is-danger">
+              <div class="message-header">
+                <p>Error</p>
+                <button class="delete" aria-label="delete"></button>
+              {{message}}
+              </div>
+              <div class="message-body">
+                <strong>You have entered an incorrect username or password. Please try again</strong>
+              </div>
+            </article>
+      {{/message}}
+  </main>
+      {{> footer}}
+</body>
