@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    {{> header}}
-    <title>Water</title>
-  </head>
 
-  <body class="site">
-    {{> menu}}
+<head>
+  {{> header}}
+  <title>Water</title>
+</head>
 
+<body class="site">
+  {{> menu}}
+
+  <main class="site-content">
     <div class="content">
       <h3>Your saved addresses</h3>
       <ol>
@@ -21,9 +23,11 @@
         <li>Cras gravida arcu at diam gravida gravida.</li>
       </ol>
     </div>
-    
-    <a href="/account/add-address"><button>Add Address</button></a>
 
-    {{> footer}}
-  </body>
+    <a href="/account/add-address"><button>Add Address</button></a>
+  </main>
+
+  {{> footer}}
+</body>
+
 </html>

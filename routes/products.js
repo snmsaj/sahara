@@ -2,6 +2,18 @@ const express = require("express");
 const router = express.Router();
 const models = require("../models");
 
+function authenticate(req, res, next) {
+    if(req.session) {
+        if(req.session.user) {
+            next()
+        }else {
+            res.redirect('/login')
+        }
+    }else {
+        res.redirect('/login')
+    }
+}
+
 //Render the water onto the water page
 router.get("/water", (req, res) => {
     models.Product.findAll({
@@ -37,16 +49,16 @@ router.get("/:category/:name", (req, res) => {
     const productName = req.params.name
 
     models.Product.findOne({
-        where:{
-            name:productName
+        where: {
+            name: productName
         }
-    }).then ((product) => {
-        res.render('item', {product:product})
+    }).then((product) => {
+        res.render('item', { product: product })
     })
 })
 
 //Add item to Carts table
-router.post('/cart',async (req, res) => {
+router.post('/cart', authenticate, (req, res) => {
     const productId = parseInt(req.body.productId)
     const userId = parseInt(req.session.user.userId)
     const quantity = parseInt(req.body.quantity)
@@ -56,9 +68,9 @@ router.post('/cart',async (req, res) => {
         userId: userId,
         quantity: quantity
     })
-    console.log(cartItem)
-    await cartItem.save().then(savedItem => {
-        console.log("Item added to cart")
+
+    cartItem.save().then(savedItem => {
+        res.redirect('/products')
     }).catch((error) => {
         console.log(error)
     })
