@@ -10,104 +10,56 @@
     {{> menu}}
 
     <main class="site-content">
-        <div class="cart-styling">
-        <section class="section">
-            <div class="container">
-                <div class="columns">
-                    <div class="column">
-                        <div class="tabs is-boxed">
-                            <ul>
-                                <li class="is-active">
-                                    <a>Cart</a>
-                                </li>
-                            </ul>
-                        </div>
+            <section class="section">
+                <div class="container">
+                    <div class="columns">
+                        <div class="column">
+                            <div class="tabs is-boxed">
+                                <ul>
+                                    <li class="is-active">
+                                        <a>Cart</a>
+                                    </li>
+                                </ul>
+                            </div>
 
-                        <div class="px-2" id="tab-content">
+                            <div class="px-2" id="tab-content">
 
-                            <section class="section">
-                                <div class="container">
-                                    <div class="columns is-account-grid is-multiline">
-                                        <div id="cart-page-products" class="column is-8">
-                                            {{#cartItems}}
-                                            <div class="flat-card is-auto cart-card product-container"
-                                                data-product-id="37">
-                                                <ul class="cart-content">
-                                                    <li>
-                                                        <img src="{{image}}" alt="">
-                                                        <span class="product-info">
-                                                            <span>{{name}}</span>
-                                                        </span>
-                                                        <span class="product-price">
-                                                            <span>Price</span>
-                                                            <span>${{price}}</span>
-                                                        </span>
+                                <section class="section">
+                                    <div class="container">
 
-                                                        <div data-trigger="spinner" class="main-cart-spinner">
-                                                            <input class="hidden-spinner" type="hidden"
-                                                                value="{{quantity}}" data-spin="spinner"
-                                                                data-rule="quantity" data-min="1" data-max="99">
-                                                            <a class="spinner-button is-remove" href="javascript:;"
-                                                                data-spin="down">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                                                    height="24" viewBox="0 0 24 24" fill="none"
-                                                                    stroke="currentColor" stroke-width="2"
-                                                                    stroke-linecap="round" stroke-linejoin="round"
-                                                                    class="feather feather-minus">
-                                                                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                                                                </svg>
-                                                            </a>
-                                                            <span class="spinner-value">12</span>
-                                                            <a class="spinner-button is-add" href="javascript:;"
-                                                                data-spin="up">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                                                    height="24" viewBox="0 0 24 24" fill="none"
-                                                                    stroke="currentColor" stroke-width="2"
-                                                                    stroke-linecap="round" stroke-linejoin="round"
-                                                                    class="feather feather-plus">
-                                                                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                                                                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                                                                </svg>
-                                                            </a>
+                                                <section class="section">
+                                                    <div class="container">
+                                                        <div class="columns mt-5 is-8 is-variable is-multiline">
+                                                            {{#cartItems}}
+                                                            <div class="column is-4-tablet is-3-desktop">
+                                                                <div class="card bm--card-equal-height">
+                                                                    <div class="card-image has-text-centered px-6">
+                                                                        <img src="{{image}}" alt="item" class="card-images"/>
+                                                                    </div>
+                                                                    <div class="card-content">
+                                                                        <p class="title is-size-5 has-text-centered">
+                                                                            {{name}}</p>
+                                                                        <p class="has-text-centered">${{price}}</p>
+                                                                    </div>
+
+                                                                </div>
+
+                                                            </div>
+                                                            {{/cartItems}}
                                                         </div>
-
-                                                        <span class="action">
-                                                            <span
-                                                                class="action-link is-remove remove-from-cartpage-action has-simple-popover"
-                                                                data-content="Remove from Cart" data-placement="top"
-                                                                onclick="return false">
-                                                                <a href="#"><svg xmlns="http://www.w3.org/2000/svg"
-                                                                        width="24" height="24" viewBox="0 0 24 24"
-                                                                        fill="none" stroke="currentColor"
-                                                                        stroke-width="2" stroke-linecap="round"
-                                                                        stroke-linejoin="round"
-                                                                        class="feather feather-trash-2">
-                                                                        <polyline points="3 6 5 6 21 6"></polyline>
-                                                                        <path
-                                                                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
-                                                                        </path>
-                                                                        <line x1="10" y1="11" x2="10" y2="17"></line>
-                                                                        <line x1="14" y1="11" x2="14" y2="17"></line>
-                                                                    </svg></a>
-                                                            </span>
-                                                        </span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            {{/cartItems}}
-                                        </div>
-
+                                                    </div>
+                                                    
+                                                </section>
 
                                     </div>
-                                </div>
-                            </section>
+                                </section>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+                <button class="button is-primary is-vcentered">Checkout</button>
+            </section>
 
-    </div>
     </main>
 
     {{> footer}}
@@ -115,10 +67,3 @@
 
 </html>
 
-
-<!-- {{#cartItems}}
-{{image}}
-{{name}}
-{{price}}
-{{quantity}}
-{{/cartItems}} -->

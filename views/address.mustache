@@ -13,14 +13,15 @@
     <div class="content">
       <h3>Your saved addresses</h3>
       <ol>
-        <li>{{#addresses}}
+        {{#addresses}}
+        <li>
           {{address}}
           {{city}}
           {{state}}
           {{postcode}}
-          {{/addresses}}
+
         </li>
-        <li>Cras gravida arcu at diam gravida gravida.</li>
+        {{/addresses}}
       </ol>
     </div>
 
