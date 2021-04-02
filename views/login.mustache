@@ -2,25 +2,55 @@
     {{> header}}
 </head>
 
-<body>
+<body class="site">
     {{> menu}}
 
-    <h1>Welcome. Please sign in</h1>
 
-    <form action="/login" method="POST">
-            <div class="field">
-        <div class="control is-medium is-loading">
-                <input class="input is-medium" name= "username" type="text" placeholder="Username">
+    <main class="site-content">
+        <section class="hero is-primary is-fullheight">
+            <div class="hero-body">
+              <div class="container">
+                <div class="columns is-centered">
+                  <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+                    <form action="/login" method="POST" class="box">
+                      <div class="field">
+                        <label for="" class="label">Username</label>
+                        <div class="control has-icons-left">
+                          <input type="text" placeholder="e.g SaharaFan" class="input" name= "username"required>
+                          <span class="icon is-small is-left">
+                            <i class="fa fa-envelope"></i>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="field">
+                        <label for="" class="label">Password</label>
+                        <div class="control has-icons-left">
+                          <input type="password" placeholder="*******" class="input" name="password" required>
+                          <span class="icon is-small is-left">
+                            <i class="fa fa-lock"></i>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="field">
+                        <label for="" class="checkbox">
+                          <input type="checkbox">
+                         Remember me
+                        </label>
+                      </div>
+                      <div class="field">
+                        <button class="button is-success">
+                          Login
+                        </button>
+                        <div class="pt-2">               
+                            <a href="/login/register" class="is-size-6 " >Don't have an account? Sign up here</a>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
             </div>
-        
-            <div class="field">
-        <div class="control is-medium is-loading">
-                <input class="input is-medium" name="password" type="password" placeholder="Password">
-            <div class="buttons">
-                <button class="button is-success">Sign Up</button>
-                <button class="button is-info">Login</button>
-                <button class="button is-danger">Cancel</button>
-            </div>
+          </section>
 
         {{#message}}
             <article class="message is-danger">
@@ -30,10 +60,10 @@
                 {{message}}
                 </div>
                 <div class="message-body">
-                  L<strong>Pellentesque risus mi</strong>
+                  <strong>You have entered an incorrect username or password. Please try again</strong>
                 </div>
               </article>
         {{/message}}
-    </form>
+    </main>
         {{> footer}}
 </body>

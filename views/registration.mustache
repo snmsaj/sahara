@@ -1,28 +1,60 @@
-<!DOCTYPE html>
-<html lang="em">
-  <head>
-    {{> header}}
-  </head>
+<head>
+  {{> header}}
+</head>
 
-  <body>
-    {{> menu}}
-    <form method="POST" action="/login/register">
-      <div class="field">
-    <div class="control is-medium is-loading">
-        <input class="input is-medium" name= "username" type="text" placeholder="Username">
-    </div>
+<body class="site">
+  {{> menu}}
 
-    <div class="field">
-    <div class="control is-medium is-loading">
-        <input class="input is-medium" name="password" type="password" placeholder="Password">
-        <button>Register</button>
-    </div>
-    
 
-      <!-- <input type="text" placeholder="username" name="username" />
-      <input type="password" placeholder="password" name="password" />
-      <button>Register</button> -->
-    </form>
-    {{> footer}}
-  </body>
-</html>
+  <main class="site-content">
+      <section class="hero is-primary is-fullheight">
+          <div class="hero-body">
+            <div class="container">
+              <div class="columns is-centered">
+                <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+                  <form action="/login" method="POST" class="box">
+                    <div class="field">
+                      <label for="" class="label">Create Username</label>
+                      <div class="control has-icons-left">
+                        <input type="text" placeholder="New username" class="input" name= "username"required>
+                        <span class="icon is-small is-left">
+                          <i class="fa fa-envelope"></i>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label for="" class="label">Create Password</label>
+                      <div class="control has-icons-left">
+                        <input type="password" placeholder="At least 6 characters" class="input" name="password" required>
+                        <span class="icon is-small is-left">
+                          <i class="fa fa-lock"></i>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <button class="button is-success">
+                        Sign Up
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      {{#message}}
+          <article class="message is-danger">
+              <div class="message-header">
+                <p>Error</p>
+                <button class="delete" aria-label="delete"></button>
+              {{message}}
+              </div>
+              <div class="message-body">
+                <strong>You have entered an incorrect username or password. Please try again</strong>
+              </div>
+            </article>
+      {{/message}}
+  </main>
+      {{> footer}}
+</body>
