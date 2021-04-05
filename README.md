@@ -12,4 +12,4 @@ We utilized ElephantSQL, Postico, JavaScript, HTML, and CSS to create this site.
 
 
 #### Future changes
-In the near future, we plan to tinker with the cart functionality as well as add a Stripe component.
+In the near future, we plan to improve the cart functionality as well as add a Stripe component.
